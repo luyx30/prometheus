@@ -21,7 +21,7 @@
  - 如果目标实例挂掉，你可以很容易地知道
  - 你可以手动指定一个目标，并通过浏览器检查该目标实例的监控状况
 
-总体来说，我们相信拉模式比推模式要好一地啊你，但是当考虑一个监控系统时，它不是主要的考虑点
+总体来说，我们相信拉模式比推模式要好一些，但是当考虑一个监控系统时，它不是主要的考虑点。
 [Push vs. Pull](http://www.boxever.com/push-vs-pull-for-monitoring)监控在Brian Brazil的博客中被详细的描述
 
 如果你必须要用Push模式，我们提供[Pushgateway](https://prometheus.io/docs/instrumenting/pushing/)
@@ -71,7 +71,7 @@
 > 客户端和语言的性能可能不同。对于Java，基准表明使用Java客户端递增计数器需要12~17ns，具体依赖于竞争。最关键的延迟关键代码之外的所有代码都是可以忽略的。
 ### 故障排除
 #### 1. 当服务崩溃恢复后，我的服务需要很多时间启动和清理垃圾日志。
-> 你的服务可能遭到了不干净的关闭。Prometheus必须在SIGTERM后彻底关闭，特别地对于一些重量级服务可能需要比较长的时间去。如果服务器崩溃或者司机（如：在等待Prometheus关闭时，内核的OOM杀死你的Prometheus服务），必须执行崩溃恢复，这在正常情况下需要不到一分钟。详见[崩溃恢复](https://prometheus.io/docs/operating/storage/#crash-recovery)
+> 你的服务可能遭到了不干净的关闭。Prometheus必须在SIGTERM后彻底关闭，特别地对于一些重量级服务可能需要比较长的时间去。如果服务器崩溃或者死机（如：在等待Prometheus关闭时，内核的OOM杀死你的Prometheus服务），必须执行崩溃恢复，这在正常情况下需要不到一分钟。详见[崩溃恢复](https://prometheus.io/docs/operating/storage/#crash-recovery)
 #### 2. 我在Linux上使用ZFS，单元测试TestPersistLoadDropChunks失败。尽管测试失败，我运行Prometheus服务，奇怪的事情会发生。
 你在Linux上有bug的ZFS文件系统运行Prometheus服务。详见[Issue #484](https://github.com/prometheus/prometheus/issues/484), 在linux v.0.6.4上升级ZFS应该可以解决该问题。
 
